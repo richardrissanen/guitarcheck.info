@@ -1,4 +1,5 @@
-var submitButton;
+var submitButton,
+    serialNumber;
 
 submitButton = document.getElementById('serial-number-check-button')
 submitButton.addEventListener('click', function() {
@@ -21,8 +22,8 @@ function validLength() {
 // "isSerialNumberFrom" to call.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function processForm() {
   return { state: true }
 }
@@ -31,8 +32,8 @@ function processForm() {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromChina () {
   return { status: 'ok', state: false }
 }
@@ -41,8 +42,8 @@ function isSerialNumberFromChina () {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromIndia () {
   return { status: 'ok', state: false }
 }
@@ -51,8 +52,8 @@ function isSerialNumberFromIndia () {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromIndonesia () {
   return { status: 'ok', state: false }
 }
@@ -61,8 +62,8 @@ function isSerialNumberFromIndonesia () {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromJapan () {
   return { status: 'ok', state: false }
 }
@@ -71,8 +72,8 @@ function isSerialNumberFromJapan () {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromKorea () {
   return { status: 'ok', state: false }
 }
@@ -81,8 +82,8 @@ function isSerialNumberFromKorea () {
 // serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromMexico () {
   return { status: 'ok', state: false }
 }
@@ -91,8 +92,8 @@ function isSerialNumberFromMexico () {
 // the serial number.
 // Examples:
 //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-//   FAILURE PATH: returns { status: 'ok', state: false, message: nil }
-//   ERROR PATH:   returns { status: 'error', state: false, message: nil }
+//   FAILURE PATH: returns { status: 'ok', state: false, message: null }
+//   ERROR PATH:   returns { status: 'error', state: false, message: null }
 function isSerialNumberFromUnitedStates () {
   return { status: 'ok', state: false }
 }
@@ -127,9 +128,9 @@ function countryOfOriginDidNotMatchSerialNumber() {
 ////
 
 // Resets the country of origin field to "not sure"
-// HAPPY PATH: retruns { status: 'ok', state: true, message: nil }
-// FAILURE PATH: retruns { status: 'ok', state: false, message: nil }
-// ERROR PATH: retruns { status: 'error', state: false, message: nil }
+// HAPPY PATH: retruns { status: 'ok', state: true, message: null }
+// FAILURE PATH: retruns { status: 'ok', state: false, message: null }
+// ERROR PATH: retruns { status: 'error', state: false, message: null }
 function resetCountryOfOrigin() { return { status: 'ok', state: true } }
 
 // Creates oobject with keys status, state, and message
