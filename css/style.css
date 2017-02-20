@@ -79,8 +79,9 @@ h4 { font-size: 1em; }
 h5 { font-size: 0.875em; }
 
 p {
- margin-bottom: 11px;
- margin-top: 11px;
+  line-height: 1.125em; 
+  margin-bottom: 11px;
+  margin-top: 11px;
 }
 
 /* FORM */
@@ -105,15 +106,21 @@ input, select {
   line-height: 1.5em;
 }
 
+input {
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
 input[type="submit"] {
   background-color: green;
   background: linear-gradient(lightgreen 0%, green 100%);
   border: 0px transparent none;
   color: #eee;
-  margin-top: 22px;
+  margin-top: 33px;
   padding-bottom: 7.5px;
   padding-top: 7.5px;
-  width: 102%;
+  width: 100%;
 }
 
 label {
@@ -133,5 +140,5 @@ select {
 	background: linear-gradient(#eee 0%, #999 100%);
   border-color: #bbb;
   height: 45px;
-  width: 102%;
+  width: 100%;
 }
