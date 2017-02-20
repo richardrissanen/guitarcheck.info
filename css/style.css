@@ -47,7 +47,10 @@ article {
   margin: 0 auto;
 }
 
-body { color: #222; }
+body {
+	color: #222;
+	font-family: Georgia, serif;
+}
 
 footer, header {
 	width: 100%;
@@ -78,8 +81,10 @@ h3 { font-size: 1.375em; }
 h4 { font-size: 1em; }
 h5 { font-size: 0.875em; }
 
+h1, h2, h3, h4, h5 { font-family: helvetica, arial, courier, sans-serif; }
+
 p {
-  line-height: 1.125em; 
+  line-height: 1.125em;
   margin-bottom: 11px;
   margin-top: 11px;
 }
@@ -124,15 +129,22 @@ input[type="submit"] {
 }
 
 label {
-	color: #aaa;
+	color: #eee;
 	margin-bottom: -11px;
 }
 
 legend {
-	color: #eee;
-  font-size: 1.5em;
+	color: #aaa;
+  font-size: 1.25em;
   margin-bottom: -5.5px;
   margin-top: 11px;
+}
+
+legend span {
+	color: #ffd700;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.5em;
+	text-shadow: 2px 2px 1px #000;
 }
 
 select {
