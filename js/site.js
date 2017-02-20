@@ -127,7 +127,10 @@ function countryOfOriginDidNotMatchSerialNumber() {
 ////
 
 // Resets the country of origin field to "not sure"
-function resetCountryOfOrigin() { return { status: 'ok' } }
+// HAPPY PATH: retruns { status: 'ok', state: true, message: nil }
+// FAILURE PATH: retruns { status: 'ok', state: false, message: nil }
+// ERROR PATH: retruns { status: 'error', state: false, message: nil }
+function resetCountryOfOrigin() { return { status: 'ok', state: true } }
 
 // Creates oobject with keys status, state, and message
 function createMessageObject(status, state, message) { return { status: status, state: state, message: message } }
