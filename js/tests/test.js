@@ -52,13 +52,36 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.state   === true)
       simpleTest.assert(message.message === 'india')
     },
-    testProcessFormForIndonesia: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'indonesia')
+    testProcessFormForIndonesiaIC: function() {
+      var message = serialNumberChecker.processForm('ic983456789', 'indonesia')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === 'indonesia')
+      simpleTest.assert(message.message === '1998')
     },
+    testProcessFormForIndonesiaICS: function() {
+      var message = serialNumberChecker.processForm('ics10456789', 'indonesia')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2010')
+    },
+    testProcessFormForIndonesiaIS: function() {
+      var message = serialNumberChecker.processForm('is003456789', 'indonesia')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2000')
+    },
+    testProcessFormForIndonesiaSI: function() {
+      var message = serialNumberChecker.processForm('si023456789', 'indonesia')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2002')
+    },
+
+
     testProcessFormForJapanA: function() {
       var message = serialNumberChecker.processForm('a123456', 'japan')
 
