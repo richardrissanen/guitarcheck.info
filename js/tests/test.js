@@ -66,12 +66,61 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.state   === true)
       simpleTest.assert(message.message === 'japan')
     },
-    testProcessFormForKorea: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'korea')
+    testProcessFormForKoreaCN: function() {
+      var message = serialNumberChecker.processForm('cn423456', 'korea')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === 'korea')
+      simpleTest.assert(message.message === '1994')
+    },
+    testProcessFormForKoreaE: function() {
+      var message = serialNumberChecker.processForm('e723456', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1987')
+    },
+     testProcessFormForKoreaKC: function() {
+      var message = serialNumberChecker.processForm('kc97345678', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1997')
+    },
+      testProcessFormForKoreaKV: function() {
+      var message = serialNumberChecker.processForm('kv97345678', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1997')
+    },
+      testProcessFormForKoreaM: function() {
+      var message = serialNumberChecker.processForm('m2234567', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1992')
+    },
+      testProcessFormForKoreaNK: function() {
+      var message = serialNumberChecker.processForm('nk423456', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1994')
+    },
+      testProcessFormForKoreaS: function() {
+      var message = serialNumberChecker.processForm('s9234567', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1989')
+    },
+      testProcessFormForKoreaVN: function() {
+      var message = serialNumberChecker.processForm('vn6234567', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1996')
     },
     testProcessFormForMexico: function() {
       var message = serialNumberChecker.processForm('mn992345', 'mexico')
@@ -95,7 +144,7 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.message === '1991 - 1993')
     },
 
-    
+
 
     // testProcessFormFailure: function() {
     //   var message = serialNumberChecker.processForm('JV12345', 'china')

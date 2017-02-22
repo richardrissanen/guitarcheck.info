@@ -7,7 +7,7 @@ define(['../utility', ], function(utility) {
 
     data = {
       prefixSize: 3,
-      obj: {
+      prefixes: {
         'mn3': '1993',
         'mn4': '1994',
         'mn5': '1995',
@@ -29,10 +29,7 @@ define(['../utility', ], function(utility) {
 
       serialNumberPrefix = serialNumber.substring(0, data.prefixSize)
 
-      console.log(data.prefixSize);
-      console.log(serialNumberPrefix);
-
-      message = data.obj[serialNumberPrefix]
+      message = data.prefixes[serialNumberPrefix]
 
       return utility.createMessageObject('ok', true, message)
     }

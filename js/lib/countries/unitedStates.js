@@ -8,7 +8,7 @@ define(['../utility'], function(utility) {
 
     data = {
       maximumPrefixSize: 2,
-      obj: {
+      prefixes: {
         'e9': '1989',
         'n0': '1990',
         'n1': '1991',
@@ -31,7 +31,7 @@ define(['../utility'], function(utility) {
 
         if (typeof message !== 'undefined') { break }
         serialNumberPrefix = serialNumber.substring(0, i)
-        message = data.obj[serialNumberPrefix]
+        message = data.prefixes[serialNumberPrefix]
 
       }
 
