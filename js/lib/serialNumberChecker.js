@@ -1,9 +1,11 @@
-define(['../config/strings', '../config/application'], function(strings, app) {
-  var errors, contact, serialNumber;
+define(['../config/strings', '../config/application', './utility'], function(strings, app, utility) {
+  var errors, contact, serialNumber, utility;
 
   errors             = strings.errors
   contact            = strings.contact
   serialNumberConfig = app.serialNumber
+
+  utility = new utility()
 
   var serialNumberCheckerModule = function() {
 
@@ -47,7 +49,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
 
       }
 
-      return createMessageObject(status, state, message)
+      return utility.createMessageObject(status, state, message)
 
     }
 
@@ -99,7 +101,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromChina() {
-    return createMessageObject('ok', true, 'china')
+    return utility.createMessageObject('ok', true, 'china')
   }
 
   // Iterates over possible serial numbers from India and checks against the
@@ -109,7 +111,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromIndia() {
-    return createMessageObject('ok', true, 'india')
+    return utility.createMessageObject('ok', true, 'india')
   }
 
   // Iterates over possible serial numbers from Indonesia and checks against the
@@ -119,7 +121,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromIndonesia() {
-    return createMessageObject('ok', true, 'indonesia')
+    return utility.createMessageObject('ok', true, 'indonesia')
   }
 
   // Iterates over possible serial numbers from Japan and checks against the
@@ -129,7 +131,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromJapan() {
-    return createMessageObject('ok', true, 'japan')
+    return utility.createMessageObject('ok', true, 'japan')
   }
 
   // Iterates over possible serial numbers from Korea and checks against the
@@ -139,7 +141,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromKorea() {
-    return createMessageObject('ok', true, 'korea')
+    return utility.createMessageObject('ok', true, 'korea')
   }
 
   // Iterates over possible serial numbers from Mexico and checks against the
@@ -149,7 +151,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromMexico() {
-    return createMessageObject('ok', true, 'mexico')
+    return utility.createMessageObject('ok', true, 'mexico')
   }
 
   // Iterates over possible serial numbers from United States and checks against
@@ -159,7 +161,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromUnitedStates() {
-    return createMessageObject('ok', true, 'united states')
+    return utility.createMessageObject('ok', true, 'united states')
   }
 
   ////
@@ -168,25 +170,14 @@ define(['../config/strings', '../config/application'], function(strings, app) {
 
   // Retunrs message indicating the serial number was not found. This only
   // occurs when "Country of origin" is "not sure" and no match was found.
-  function serialNumberWasNotFound() { return createMessageObject('error', false, errors.notFound) }
+  function serialNumberWasNotFound() { return utility.createMessageObject('error', false, errors.notFound) }
 
   // Retunrs message indicating the serial number did not match the
   // "Country of origin" suggested by the visitor. This only occurs when
   // "Country of origin" is any named country and no match is found.
-  function countryOfOriginDidNotMatchSerialNumber() { return createMessageObject('error', false, errors.noMatch) }
-
-  ////
-  // UTILITY
-  ////
-
-  // Resets the country of origin field to "not sure"
-  // HAPPY PATH: retruns { status: 'ok', state: true, message: null }
-  // FAILURE PATH: retruns { status: 'ok', state: false, message: null }
-  // ERROR PATH: retruns { status: 'error', state: false, message: <error> }
-  function resetCountryOfOrigin() { return createMessageObject('ok', true, null) }
-
-  // Creates oobject with keys status, state, and message
-  function createMessageObject(status, state, message) { return { status: status, state: state, message: message } }
+  function countryOfOriginDidNotMatchSerialNumber() {
+    return utility.createMessageObject('error', false, errors.noMatch)
+  }
 
   return serialNumberCheckerModule
 
