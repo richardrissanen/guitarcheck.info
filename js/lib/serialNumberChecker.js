@@ -40,12 +40,15 @@ define(['../config/strings', '../config/application'], function(strings, app) {
         status = 'ok'
 
       } catch (error) {
+
         status  = 'error'
         status  = false
         message = error.message
+
       }
-      alert('serialNumber: ' + serialNumber + '\nstatus: ' + status +  '\nstate: ' + state.toString() + '\nmessage: ' + message)
+
       return createMessageObject(status, state, message)
+
     }
 
     // Primary Function determines what to do next.
@@ -56,7 +59,36 @@ define(['../config/strings', '../config/application'], function(strings, app) {
     //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
     //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
     this.processForm = function(serialNumber, country) {
-      return { status: 'ok', state: true, message: '1985' }
+
+      var message;
+
+      switch(country) {
+          case 'china':
+            message = isSerialNumberFromChina()
+            break
+          case 'india':
+            message = isSerialNumberFromIndia()
+            break
+          case 'indonesia':
+            message = isSerialNumberFromIndonesia()
+            break
+          case 'japan':
+            message = isSerialNumberFromJapan()
+            break
+          case 'korea':
+            message = isSerialNumberFromKorea()
+            break
+          case 'mexico':
+            message = isSerialNumberFromMexico()
+            break
+          case 'united states':
+            message = isSerialNumberFromUnitedStates()
+            break
+          default:
+            // run all countries
+      }
+
+      return message
     }
   }
 
@@ -67,7 +99,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromChina() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'china' }
   }
 
   // Iterates over possible serial numbers from India and checks against the
@@ -77,7 +109,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromIndia() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'india' }
   }
 
   // Iterates over possible serial numbers from Indonesia and checks against the
@@ -87,7 +119,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromIndonesia() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'indonesia' }
   }
 
   // Iterates over possible serial numbers from Japan and checks against the
@@ -97,7 +129,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromJapan() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'japan' }
   }
 
   // Iterates over possible serial numbers from Korea and checks against the
@@ -107,7 +139,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromKorea() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'korea' }
   }
 
   // Iterates over possible serial numbers from Mexico and checks against the
@@ -117,7 +149,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromMexico() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'mexico' }
   }
 
   // Iterates over possible serial numbers from United States and checks against
@@ -127,7 +159,7 @@ define(['../config/strings', '../config/application'], function(strings, app) {
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
   function isSerialNumberFromUnitedStates() {
-    return { status: 'ok', state: false, message: null }
+    return { status: 'ok', state: true, message: 'united states' }
   }
 
   ////
