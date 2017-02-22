@@ -1,7 +1,7 @@
 define(
   ['../config/strings', '../config/application', './utility', './countries/china', './countries/india',
-  './countries/indonesia'],
-  function(strings, app, utility, china, india, indonesia) {
+  './countries/indonesia', './countries/japan', './countries/korea', './countries/mexico'],
+  function(strings, app, utility, china, india, indonesia, japan, korea, mexico) {
     var errors, contact, serialNumber, utility;
 
     errors             = strings.errors
@@ -81,13 +81,16 @@ define(
               message   = indonesia.isSerialNumberFromIndonesia(serialNumber)
               break
             case 'japan':
-              message = isSerialNumberFromJapan(serialNumber)
+              japan = new japan()
+              message = japan.isSerialNumberFromJapan(serialNumber)
               break
             case 'korea':
-              message = isSerialNumberFromKorea(serialNumber)
+              korea = new korea()
+              message = korea.isSerialNumberFromKorea(serialNumber)
               break
             case 'mexico':
-              message = isSerialNumberFromMexico(serialNumber)
+              mexico = new mexico()
+              message = mexico.isSerialNumberFromMexico(serialNumber)
               break
             case 'united states':
               message = isSerialNumberFromUnitedStates(serialNumber)
@@ -112,36 +115,6 @@ define(
 
         return message
       }
-    }
-
-    // Iterates over possible serial numbers from Japan and checks against the
-    // serial number.
-    // Examples:
-    //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-    //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
-    //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-    function isSerialNumberFromJapan(serialNumber) {
-      return utility.createMessageObject('ok', true, 'japan')
-    }
-
-    // Iterates over possible serial numbers from Korea and checks against the
-    // serial number.
-    // Examples:
-    //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-    //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
-    //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-    function isSerialNumberFromKorea(serialNumber) {
-      return utility.createMessageObject('ok', true, 'korea')
-    }
-
-    // Iterates over possible serial numbers from Mexico and checks against the
-    // serial number.
-    // Examples:
-    //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-    //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
-    //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-    function isSerialNumberFromMexico(serialNumber) {
-      return utility.createMessageObject('ok', true, 'mexico')
     }
 
     // Iterates over possible serial numbers from United States and checks against
