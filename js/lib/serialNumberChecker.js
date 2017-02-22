@@ -66,25 +66,25 @@ define(['../config/strings', '../config/application', './utility'], function(str
 
       switch(country) {
           case 'china':
-            message = isSerialNumberFromChina()
+            message = isSerialNumberFromChina(serialNumber)
             break
           case 'india':
-            message = isSerialNumberFromIndia()
+            message = isSerialNumberFromIndia(serialNumber)
             break
           case 'indonesia':
-            message = isSerialNumberFromIndonesia()
+            message = isSerialNumberFromIndonesia(serialNumber)
             break
           case 'japan':
-            message = isSerialNumberFromJapan()
+            message = isSerialNumberFromJapan(serialNumber)
             break
           case 'korea':
-            message = isSerialNumberFromKorea()
+            message = isSerialNumberFromKorea(serialNumber)
             break
           case 'mexico':
-            message = isSerialNumberFromMexico()
+            message = isSerialNumberFromMexico(serialNumber)
             break
           case 'united states':
-            message = isSerialNumberFromUnitedStates()
+            message = isSerialNumberFromUnitedStates(serialNumber)
             break
           default:
             // run all countries
@@ -100,7 +100,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromChina() {
+  function isSerialNumberFromChina(serialNumber) {
     return utility.createMessageObject('ok', true, 'china')
   }
 
@@ -110,7 +110,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromIndia() {
+  function isSerialNumberFromIndia(serialNumber) {
     return utility.createMessageObject('ok', true, 'india')
   }
 
@@ -120,7 +120,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromIndonesia() {
+  function isSerialNumberFromIndonesia(serialNumber) {
     return utility.createMessageObject('ok', true, 'indonesia')
   }
 
@@ -130,7 +130,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromJapan() {
+  function isSerialNumberFromJapan(serialNumber) {
     return utility.createMessageObject('ok', true, 'japan')
   }
 
@@ -140,7 +140,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromKorea() {
+  function isSerialNumberFromKorea(serialNumber) {
     return utility.createMessageObject('ok', true, 'korea')
   }
 
@@ -150,7 +150,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromMexico() {
+  function isSerialNumberFromMexico(serialNumber) {
     return utility.createMessageObject('ok', true, 'mexico')
   }
 
@@ -160,7 +160,7 @@ define(['../config/strings', '../config/application', './utility'], function(str
   //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
   //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
   //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-  function isSerialNumberFromUnitedStates() {
+  function isSerialNumberFromUnitedStates(serialNumber) {
     return utility.createMessageObject('ok', true, 'united states')
   }
 
