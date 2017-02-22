@@ -118,7 +118,11 @@ define(
 
               break
             default:
-              message = 'Check the headstock and the base of the neck where it meets the body for country of origin.'
+              message = utility.createMessageObject(
+                'ok',
+                false,
+                'Find country of origin: Check the headstock and the base of the neck where it meets the body.'
+              )
               // todo
               //   run all countries
         }
@@ -143,6 +147,4 @@ define(
     }
 
     return serialNumberCheckerModule
-
-  }
-)
+})
