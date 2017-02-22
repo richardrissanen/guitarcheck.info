@@ -127,6 +127,8 @@ define(
               //   run all countries
         }
 
+        if (typeof message.message === 'undefined') { message = serialNumberWasNotFound() }
+
         return message
       }
     }
@@ -135,16 +137,8 @@ define(
     // errors
     ////
 
-    // Returns message indicating the serial number was not found. This only
-    // occurs when "Country of origin" is "not sure" and no match was found.
+    // Returns message indicating the serial number was not found.
     function serialNumberWasNotFound() { return utility.createMessageObject('error', false, errors.notFound) }
-
-    // Returns message indicating the serial number did not match the
-    // "Country of origin" suggested by the visitor. This only occurs when
-    // "Country of origin" is any named country and no match is found.
-    function countryOfOriginDidNotMatchSerialNumber() {
-      return utility.createMessageObject('error', false, errors.noMatch)
-    }
 
     return serialNumberCheckerModule
 })
