@@ -36,17 +36,10 @@ define(['../utility'], function(utility) {
 
       for (var i = data.minimumPrefixSize; i <= data.maximumPrefixSize; i++) {
 
-        if (typeof message !== 'undefined') { break }
-
         serialNumberPrefix = serialNumber.substring(0, i)
-
-        // console.log(serialNumberPrefix);
-
         message = data.prefixes[serialNumberPrefix]
 
-        // console.log('message == ' + message);
-
-
+        if (typeof message !== 'undefined') { break }
       }
 
       return utility.createMessageObject('ok', true, message)    }

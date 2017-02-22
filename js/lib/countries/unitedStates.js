@@ -29,10 +29,10 @@ define(['../utility'], function(utility) {
 
       for (var i = 0; i <= data.maximumPrefixSize; i++) {
 
-        if (typeof message !== 'undefined') { break }
         serialNumberPrefix = serialNumber.substring(0, i)
         message = data.prefixes[serialNumberPrefix]
 
+        if (typeof message !== 'undefined') { break }
       }
 
       return utility.createMessageObject('ok', true, message)
