@@ -1,6 +1,7 @@
 define(
-  ['../config/strings', '../config/application', './utility', './countries/china', './countries/india'],
-  function(strings, app, utility, china, india) {
+  ['../config/strings', '../config/application', './utility', './countries/china', './countries/india',
+  './countries/indonesia'],
+  function(strings, app, utility, china, india, indonesia) {
     var errors, contact, serialNumber, utility;
 
     errors             = strings.errors
@@ -68,15 +69,16 @@ define(
 
         switch(country) {
             case 'china':
-              china = new china()
+              china   = new china()
               message = china.isSerialNumberFromChina(serialNumber)
               break
             case 'india':
-              india = new india()
+              india   = new india()
               message = india.isSerialNumberFromIndia(serialNumber)
               break
             case 'indonesia':
-              message = isSerialNumberFromIndonesia(serialNumber)
+              indonesia = new indonesia()
+              message   = indonesia.isSerialNumberFromIndonesia(serialNumber)
               break
             case 'japan':
               message = isSerialNumberFromJapan(serialNumber)
@@ -110,16 +112,6 @@ define(
 
         return message
       }
-    }
-
-    // Iterates over possible serial numbers from Indonesia and checks against the
-    // serial number.
-    // Examples:
-    //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-    //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
-    //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-    function isSerialNumberFromIndonesia(serialNumber) {
-      return utility.createMessageObject('ok', true, 'indonesia')
     }
 
     // Iterates over possible serial numbers from Japan and checks against the
