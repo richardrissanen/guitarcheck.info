@@ -5,11 +5,6 @@ define([], function() {
 
   var testModule = function() {
 
-    this.testLog = function(input) {
-      console.log('TEST!!!');
-      console.log(input);
-    }
-
      this.test = function(tests, consoleElement) {
         var results = {}, failed = 0,
             console = typeof(consoleElement) === "string" ?

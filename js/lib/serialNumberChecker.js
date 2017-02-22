@@ -69,32 +69,53 @@ define(
 
         switch(country) {
             case 'china':
-              china   = new china()
-              message = china.isSerialNumberFromChina(serialNumber)
+              var chinaModule;
+
+              if (typeof chinaModule === 'undefined') { chinaModule = new china() }
+              message = chinaModule.isSerialNumberFromChina(serialNumber)
+
               break
             case 'india':
-              india   = new india()
-              message = india.isSerialNumberFromIndia(serialNumber)
+              var indiaModule;
+
+              if (typeof indiaModule === 'undefined') { indiaModule = new india() }
+              message = indiaModule.isSerialNumberFromIndia(serialNumber)
+
               break
             case 'indonesia':
-              indonesia = new indonesia()
-              message   = indonesia.isSerialNumberFromIndonesia(serialNumber)
+              var indonesiaModule;
+
+              if (typeof indonesiaModule === 'undefined') { indonesiaModule = new indonesia() }
+              message = indonesiaModule.isSerialNumberFromIndonesia(serialNumber)
+
               break
             case 'japan':
-              japan = new japan()
-              message = japan.isSerialNumberFromJapan(serialNumber)
+              var japanModule;
+
+              if (typeof japanModule === 'undefined') { japanModule = new japan() }
+              message = japanModule.isSerialNumberFromJapan(serialNumber)
+
               break
             case 'korea':
-              korea = new korea()
-              message = korea.isSerialNumberFromKorea(serialNumber)
+              var koreaModule;
+
+              if (typeof koreaModule === 'undefined' ) { koreaModule = new korea() }
+              message = koreaModule.isSerialNumberFromKorea(serialNumber)
+
               break
             case 'mexico':
-              mexico = new mexico()
-              message = mexico.isSerialNumberFromMexico(serialNumber)
+              var mexicoModule;
+
+              if (typeof mexicoModule === 'undefined') { mexicoModule = new mexico() }
+              message = mexicoModule.isSerialNumberFromMexico(serialNumber)
+
               break
             case 'united states':
-              unitedStates = new unitedStates()
-              message = unitedStates.isSerialNumberFromUnitedStates(serialNumber)
+              var unitedStatesModule;
+
+              if (typeof unitedStatesModule === 'undefined' ) { unitedStatesModule = new unitedStates() }
+              message = unitedStatesModule.isSerialNumberFromUnitedStates(serialNumber)
+
               break
             default:
               // run all countries

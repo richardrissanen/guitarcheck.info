@@ -5,6 +5,13 @@ define(['../utility'], function(utility) {
 
   var indiaModule = function() {
 
+    // data = {
+    //   maximumPrefixSize: #,
+    //   obj: {
+    //
+    //   }
+    // }
+
     // Iterates over possible serial numbers from India and checks against the
     // serial number.
     // Examples:

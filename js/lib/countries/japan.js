@@ -5,6 +5,13 @@ define(['../utility'], function(utility) {
 
   var japanModule = function() {
 
+    // data = {
+    //   maximumPrefixSize: #,
+    //   obj: {
+    //
+    //   }
+    // }
+
     // Iterates over possible serial numbers from Japan and checks against the
     // serial number.
     // Examples:

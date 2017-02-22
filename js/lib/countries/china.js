@@ -5,6 +5,13 @@ define(['../utility'], function(utility) {
 
   var chinaModule = function() {
 
+    // data = {
+    //   maximumPrefixSize: #,
+    //   obj: {
+    //
+    //   }
+    // }
+
 
     // Iterates over possible serial numbers from China and checks against the
     // serial number.

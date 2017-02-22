@@ -1,9 +1,22 @@
-define(['../utility'], function(utility) {
+define(['../utility', ], function(utility) {
   var utility;
 
   utility = new utility()
 
   var mexicoModule = function() {
+
+    data = {
+      prefixSize: 3,
+      obj: {
+        'mn3': '1993',
+        'mn4': '1994',
+        'mn5': '1995',
+        'mn6': '1996',
+        'mn7': '1997',
+        'mn8': '1998',
+        'mn9': '1999'
+      }
+    }
 
     // Iterates over possible serial numbers from Mexico and checks against the
     // serial number.
@@ -12,7 +25,16 @@ define(['../utility'], function(utility) {
     //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
     //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
     this.isSerialNumberFromMexico = function(serialNumber) {
-      return utility.createMessageObject('ok', true, 'mexico')
+      var message;
+
+      serialNumberPrefix = serialNumber.substring(0, data.prefixSize)
+
+      console.log(data.prefixSize);
+      console.log(serialNumberPrefix);
+
+      message = data.obj[serialNumberPrefix]
+
+      return utility.createMessageObject('ok', true, message)
     }
 
   }

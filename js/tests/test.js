@@ -74,34 +74,43 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.message === 'korea')
     },
     testProcessFormForMexico: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'mexico')
+      var message = serialNumberChecker.processForm('mn992345', 'mexico')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === 'mexico')
+      simpleTest.assert(message.message === '1999')
     },
-    testProcessFormForUnitedStates: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'united states')
+    testProcessFormForUnitedStates89: function() {
+      var message = serialNumberChecker.processForm('e912345', 'united states')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === 'united states')
+      simpleTest.assert(message.message === '1989')
     },
-
-    testProcessFormFailure: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'china')
+    testProcessFormForUnitedStates0: function() {
+      var message = serialNumberChecker.processForm('012345', 'united states')
 
       simpleTest.assert(message.status  === 'ok')
-      simpleTest.assert(message.state   === false)
-      simpleTest.assert(message.message === errors.noMatch)
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '1991 - 1993')
     },
-    testProcessFormError: function() {
-      var message = serialNumberChecker.processForm(null, 'china')
 
-      simpleTest.assert(message.status  === 'error')
-      simpleTest.assert(message.state   === false)
-      simpleTest.assert(message.message === errors.processForm + contact.email)
-    }
-})
+    
+
+    // testProcessFormFailure: function() {
+    //   var message = serialNumberChecker.processForm('JV12345', 'china')
+    //
+    //   simpleTest.assert(message.status  === 'ok')
+    //   simpleTest.assert(message.state   === false)
+    //   simpleTest.assert(message.message === errors.noMatch)
+    // },
+    // testProcessFormError: function() {
+    //   var message = serialNumberChecker.processForm(null, 'china')
+    //
+    //   simpleTest.assert(message.status  === 'error')
+    //   simpleTest.assert(message.state   === false)
+    //   simpleTest.assert(message.message === errors.processForm + contact.email)
+    // }
+  })
 
 })
