@@ -43,30 +43,51 @@ a, a:visited, a:active, a:disabled {
 
 article {
   width: 100%;
-  max-width: 300px;
+  max-width: 450px;
   margin: 0 auto;
 }
 
 body {
-	color: #222;
+	color: #aaa;
 	font-family: Georgia, serif;
 }
 
+dd, dt, p { line-height: 1.375em; }
+
+dd {
+	margin-left: 22px;
+	margin-bottom: 11px;
+}
+
+dl { margin-top: 11px; }
+
+dt { font-weight: bold; }
+
+dd a { text-decoration: underline; }
+
 footer, header {
+	margin-left: auto;
+	margin-right: auto;
 	width: 100%;
+	max-width: 450px;
 }
 
 footer {
+	border-top: solid 2px #aaa;
 	color: #aaa;
 	font-size: 0.8em;
+	margin-top: 22px;
+	padding-top: 22px;
 }
 
 footer a, footer a:visited, footer a:active, footer a:disabled { color: #aaa; }
 
 footer a#highlight {color: blue;}
 
+footer p { line-height: 1.125em; }
+
 header {
-	border-bottom: solid 3px #aaa;
+	border-bottom: solid 2px #aaa;
 	color: #eee;
 	margin-bottom: 22px;
 	margin-top: 22px;
@@ -83,11 +104,23 @@ h5 { font-size: 0.875em; }
 
 h1, h2, h3, h4, h5 { font-family: helvetica, arial, courier, sans-serif; }
 
+h2, h3, h4, h5, legend span {
+	color: #ffd700;
+	font-family: "Times New Roman", Times, serif;
+	text-shadow: 1px 1px 1px #bbb;
+}
+
+li {
+	display: inline;
+	padding: 11px;
+}
+
 p {
-  line-height: 1.125em;
   margin-bottom: 11px;
   margin-top: 11px;
 }
+
+ul { margin-left: -11px; }
 
 /* FORM */
 form {
@@ -140,12 +173,7 @@ legend {
   margin-top: 11px;
 }
 
-legend span {
-	color: #ffd700;
-	font-family: "Times New Roman", Times, serif;
-	font-size: 1.5em;
-	text-shadow: 1px 1px 1px #bbb;
-}
+legend span { font-size: 1.5em; }
 
 select {
 	background-color: #999;
@@ -153,4 +181,8 @@ select {
   border-color: #bbb;
   height: 45px;
   width: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+	article { width: 96%; }
 }
