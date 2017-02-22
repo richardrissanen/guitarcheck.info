@@ -1,7 +1,7 @@
 define(
   ['../config/strings', '../config/application', './utility', './countries/china', './countries/india',
-  './countries/indonesia', './countries/japan', './countries/korea', './countries/mexico'],
-  function(strings, app, utility, china, india, indonesia, japan, korea, mexico) {
+  './countries/indonesia', './countries/japan', './countries/korea', './countries/mexico', './countries/unitedStates'],
+  function(strings, app, utility, china, india, indonesia, japan, korea, mexico, unitedStates) {
     var errors, contact, serialNumber, utility;
 
     errors             = strings.errors
@@ -93,7 +93,8 @@ define(
               message = mexico.isSerialNumberFromMexico(serialNumber)
               break
             case 'united states':
-              message = isSerialNumberFromUnitedStates(serialNumber)
+              unitedStates = new unitedStates()
+              message = unitedStates.isSerialNumberFromUnitedStates(serialNumber)
               break
             default:
               // run all countries
@@ -115,16 +116,6 @@ define(
 
         return message
       }
-    }
-
-    // Iterates over possible serial numbers from United States and checks against
-    // the serial number.
-    // Examples:
-    //   HAPPY PATH:   returns { status: 'ok', state: true message: "1985" }
-    //   FAILURE PATH: returns { status: 'ok', state: false, message: null }
-    //   ERROR PATH:   returns { status: 'error', state: false, message: <error> }
-    function isSerialNumberFromUnitedStates(serialNumber) {
-      return utility.createMessageObject('ok', true, 'united states')
     }
 
     ////
