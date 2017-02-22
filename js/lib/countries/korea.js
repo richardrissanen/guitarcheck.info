@@ -42,7 +42,8 @@ define(['../utility'], function(utility) {
         if (typeof message !== 'undefined') { break }
       }
 
-      return utility.createMessageObject('ok', true, message)    }
+      return utility.createMessageObject('ok', true, message)
+    }
 
   }
 
