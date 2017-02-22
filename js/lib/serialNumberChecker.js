@@ -118,21 +118,9 @@ define(
 
               break
             default:
-              // run all countries
-              // message = isSerialNumberFromChina(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromIndia(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromIndonesia(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromJapan(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromKorea(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromMexico(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
-              // message = isSerialNumberFromUnitedStates(serialNumber)
-              // if (message.status == 'ok' && message.state == true) { break }
+              message = 'Check the headstock and the base of the neck where it meets the body for country of origin.'
+              // todo
+              //   run all countries
         }
 
         return message
@@ -143,11 +131,11 @@ define(
     // errors
     ////
 
-    // Retunrs message indicating the serial number was not found. This only
+    // Returns message indicating the serial number was not found. This only
     // occurs when "Country of origin" is "not sure" and no match was found.
     function serialNumberWasNotFound() { return utility.createMessageObject('error', false, errors.notFound) }
 
-    // Retunrs message indicating the serial number did not match the
+    // Returns message indicating the serial number did not match the
     // "Country of origin" suggested by the visitor. This only occurs when
     // "Country of origin" is any named country and no match is found.
     function countryOfOriginDidNotMatchSerialNumber() {
