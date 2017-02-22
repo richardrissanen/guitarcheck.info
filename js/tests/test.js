@@ -45,13 +45,126 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.state   === true)
       simpleTest.assert(message.message === 'china')
     },
-    testProcessFormForIndia: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'india')
+    testProcessFormForIndiaCS07: function() {
+      var message = serialNumberChecker.processForm('cs07345678', 'india')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === 'india')
+      simpleTest.assert(message.message === '2007')
     },
+    testProcessFormForIndiaNHS10: function() {
+      var message = serialNumberChecker.processForm('nhs1034567', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2010')
+    },
+    testProcessFormForIndiaNHS11: function() {
+      var message = serialNumberChecker.processForm('nhs1134567', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2011')
+    },
+    testProcessFormForIndiaNHSA09: function() {
+      var message = serialNumberChecker.processForm('nhsa09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSA09: function() {
+      var message = serialNumberChecker.processForm('nhsa09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSE09: function() {
+      var message = serialNumberChecker.processForm('nhse09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSF09: function() {
+      var message = serialNumberChecker.processForm('nhsf09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSG09: function() {
+      var message = serialNumberChecker.processForm('nhsg09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSH09: function() {
+      var message = serialNumberChecker.processForm('nhsh09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSI09: function() {
+      var message = serialNumberChecker.processForm('nhsi09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNHSJ08: function() {
+      var message = serialNumberChecker.processForm('nhsj08123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2008')
+    },
+    testProcessFormForIndiaNHSJ09: function() {
+      var message = serialNumberChecker.processForm('nhsj09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaNSHK09: function() {
+      var message = serialNumberChecker.processForm('nshk09123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2009')
+    },
+    testProcessFormForIndiaSH07: function() {
+      var message = serialNumberChecker.processForm('sh07123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2007')
+    },
+    testProcessFormForIndiaSH08: function() {
+      var message = serialNumberChecker.processForm('sh08123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2008')
+    },
+    testProcessFormForIndiaZSSH07: function() {
+      var message = serialNumberChecker.processForm('zssh07123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2007')
+    },
+    testProcessFormForIndiaZSSH08: function() {
+      var message = serialNumberChecker.processForm('zssh08123456', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === '2008')
+    },
+
     testProcessFormForIndonesiaIC: function() {
       var message = serialNumberChecker.processForm('ic983456789', 'indonesia')
 

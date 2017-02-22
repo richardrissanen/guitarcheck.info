@@ -6,8 +6,9 @@ define(['../utility'], function(utility) {
   var chinaModule = function() {
 
     // data = {
+    //   minimumPrefixSize: #,    
     //   maximumPrefixSize: #,
-    //   obj: {
+    //   prefixes: {
     //
     //   }
     // }
