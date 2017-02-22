@@ -81,7 +81,7 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.message === 'mexico')
     },
     testProcessFormForUnitedStates: function() {
-      var message = serialNumberChecker.processForm('JV12345', 'united state')
+      var message = serialNumberChecker.processForm('JV12345', 'united states')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
