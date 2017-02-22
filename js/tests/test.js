@@ -38,13 +38,56 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.state   === false)
       simpleTest.assert(message.message === errors.emptySerialNumber)
     },
-    testProcessForm: function() {
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'china')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'china')
+    },
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'india')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'india')
+    },
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'indonesia')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'indonesia')
+    },
+    testProcessFormForJapan: function() {
       var message = serialNumberChecker.processForm('JV12345', 'japan')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === true)
-      simpleTest.assert(message.message === '1982 - 1984')
+      simpleTest.assert(message.message === 'japan')
     },
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'korea')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'korea')
+    },
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'mexico')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'mexico')
+    },
+    testProcessFormForJapan: function() {
+      var message = serialNumberChecker.processForm('JV12345', 'united state')
+
+      simpleTest.assert(message.status  === 'ok')
+      simpleTest.assert(message.state   === true)
+      simpleTest.assert(message.message === 'united states')
+    },
+    
     testProcessFormFailure: function() {
       var message = serialNumberChecker.processForm('JV12345', 'china')
 
