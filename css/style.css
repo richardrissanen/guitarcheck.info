@@ -110,6 +110,13 @@ h2, h3, h4, h5, legend span {
 	text-shadow: 1px 1px 1px #bbb;
 }
 
+img {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+  width: 150px;
+}
+
 li {
 	display: inline;
 	padding: 11px;
@@ -119,6 +126,8 @@ p {
   margin-bottom: 11px;
   margin-top: 11px;
 }
+
+small { font-size: 0.8em; }
 
 ul { margin-left: -11px; }
 
@@ -183,6 +192,9 @@ select {
   width: 100%;
 }
 
+/* mobile support */
 @media only screen and (max-width: 450px) {
 	article { width: 96%; }
+
+	img { width: 100px; }
 }
