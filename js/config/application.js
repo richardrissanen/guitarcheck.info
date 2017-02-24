@@ -1,6 +1,6 @@
 define({
   serialNumber: {
-    maximumLength: 12,
+    maximumLength: 13,
     minimumLength: 6
   }
 })
