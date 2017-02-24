@@ -1,3 +1,8 @@
+//// Cache Busting
+require.config({
+    urlArgs: "bust=" + (new Date()).getTime()
+});
+
 requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], function(simpleTest, serialNumberChecker, strings) {
   var simpleTest, serialNumber, errors, contact;
 
