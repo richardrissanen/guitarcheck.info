@@ -6,18 +6,19 @@ requirejs(['./serialNumberChecker'], function(serialNumberChecker) {
 
   submitButton.addEventListener('click', function() {
     event.preventDefault()
-    var serialNumber, country, message;
+    var serialNumberCheckerModule, unEditedSerialNumber, dashRemovedSerialNumber, serialNumber, country, message;
 
     serialNumberCheckerModule = new serialNumberChecker()
 
-    serialNumber = document.getElementById('serial-number').value
-    country      = document.getElementById('country').value
+    unEditedSerialNumber    = document.getElementById('serial-number').value
+    dashRemovedSerialNumber = unEditedSerialNumber.replace('-', '')
+    country                 = document.getElementById('country').value
 
-    message = serialNumberCheckerModule.validLength(serialNumber)
+    message = serialNumberCheckerModule.validLength(dashRemovedSerialNumber)
 
     if (message.status === 'ok' && message.state === true) {
 
-      serialNumber = serialNumber.toLowerCase()
+      serialNumber = dashRemovedSerialNumber.toLowerCase()
 
       message = serialNumberCheckerModule.processForm(serialNumber, country)
     }
