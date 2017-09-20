@@ -1,0 +1,59 @@
+form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+fieldset, label, input, select {
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 11px;
+  margin-top: 11px;
+  padding-bottom: 5.5px;
+  padding-top: 5.5px;
+  width: 100%;
+}
+
+input, select {
+  color: #222;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+input {
+  width: 96%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+input[type="submit"] {
+  background-color: green;
+  background: linear-gradient(lightgreen 0%, green 100%);
+  border: 0px transparent none;
+  color: #eee;
+  margin-top: 33px;
+  padding-bottom: 7.5px;
+  padding-top: 7.5px;
+  width: 100%;
+}
+
+label {
+  color: #eee;
+  margin-bottom: -11px;
+}
+
+legend {
+  color: #aaa;
+  font-size: 1.25em;
+  margin-bottom: -5.5px;
+  margin-top: 11px;
+}
+
+legend span { font-size: 1.5em; }
+
+select {
+  background-color: #999;
+  background: linear-gradient(#eee 0%, #999 100%);
+  border-color: #bbb;
+  height: 45px;
+  width: 100%;
+}

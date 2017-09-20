@@ -1,0 +1,23 @@
+<article>
+  <form (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend><span>Squier</span> Guitar Check <br><small>(1982 - 2011)</small></legend>
+
+      <label for="serial-number">Serial number</label>
+      <input type="text" name="serial-number" value="" id="serial-number">
+
+      <label for="country">Country of origin</label>
+      <select id="country" name="country">
+        <option value=""></option>
+        <option *ngFor="let country of countries" value="{{ country }}">{{ country | uppercase }}</option>
+      </select>
+
+      <input  type="submit" name="" value="Submit" id="serial-number-check-button">
+
+    </fieldset>
+  </form>
+
+</article>
+<ul>
+  <li>{{manufacturerData.mn3}}</li>
+</ul>
