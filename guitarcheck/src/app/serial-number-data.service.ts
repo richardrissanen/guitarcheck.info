@@ -6,7 +6,7 @@ export class SerialNumberDataService {
 
   fetch_company(company) { return this.serialNumberData[company]}
 
-  fetch_countries(company) { return Object.keys(this.serialNumberData[company]) }
+  fetch_countries_for_a_company(company) { return Object.keys(this.serialNumberData[company]) }
   
   fetch_companies() { return Object.keys(this.serialNumberData) }
 

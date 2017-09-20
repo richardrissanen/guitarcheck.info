@@ -16,7 +16,7 @@ export class SerialNumberFormComponent implements OnInit {
 
   ngOnInit() {
     this.manufacturerData = this.dataService.fetch_company('squier');
-    this.countries = this.dataService.fetch_countries('squier')
+    this.countries = this.dataService.fetch_countries_for_a_company('squier')
   }
   
   onSubmit() {
