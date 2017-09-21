@@ -1,0 +1,13 @@
+footer {
+	border-top: solid 2px #aaa;
+	color: #aaa;
+	font-size: 0.8em;
+	margin-top: 22px;
+	padding-top: 22px;
+}
+
+footer a, footer a:visited, footer a:active, footer a:disabled { color: #aaa; }
+
+footer a#highlight {color: blue;}
+
+footer p { line-height: 1.125em; }

@@ -5,12 +5,14 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SerialNumberFormComponent } from './serial-number-form/serial-number-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SerialNumberFormComponent
+    SerialNumberFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
