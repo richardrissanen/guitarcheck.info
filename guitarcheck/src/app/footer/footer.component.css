@@ -11,3 +11,8 @@ footer a, footer a:visited, footer a:active, footer a:disabled { color: #aaa; }
 footer a#highlight {color: blue;}
 
 footer p { line-height: 1.125em; }
+
+#twitter {
+  text-decoration: underline; 
+  color: #eee;
+}
