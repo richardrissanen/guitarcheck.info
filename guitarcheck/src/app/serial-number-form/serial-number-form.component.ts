@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import {NgForm} from '@angular/forms';
+
 import { SerialNumberDataService } from '../serial-number-data.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class SerialNumberFormComponent implements OnInit {
   manufacturerData: object
   countries: Array<string>
   countryOfOrigin: string
+  serialNumber: string
 
   constructor(private dataService: SerialNumberDataService) { }
 
@@ -18,10 +21,10 @@ export class SerialNumberFormComponent implements OnInit {
     this.manufacturerData = this.dataService.fetch_company('squier');
     this.countries = this.dataService.fetch_countries_for_a_company('squier')
   }
-  
+
   onSubmit() {
-    // this.manufacturerData[this.countryOfOrigin]
     // compare input to manufacturerData and display result
+    console.log(this.countryOfOrigin)
   }
 
 }
