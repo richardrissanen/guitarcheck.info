@@ -5,17 +5,17 @@
 
       <label for="serial-number">Serial number</label>
       <input type="text" name="serial-number" value="" id="serial-number" [(ngModel)]="serialNumber" #serial="ngModel" minlength="6" maxlength="12" required>
-      <div [hidden]="serial.valid || !serial.errors.minlength" class="alert alert-danger"><p>Serial Number should be 6-12 characters</p></div>
-      <div [hidden]="serial.valid || serial.errors.minlength" class="alert alert-danger"><p>Serial Number is required</p></div>
+      <div [hidden]="serial.valid || !serial.errors.minlength" id="sn-length-alert" class="alert alert-danger"><p>Serial Number should be 6-12 characters</p></div>
+      <div [hidden]="serial.valid || serial.errors.minlength" id="sn-required-alert" class="alert alert-danger"><p>Serial Number is required</p></div>
 
       <label for="country">Country of origin</label>
       <select id="country" name="country" [(ngModel)]="countryOfOrigin" #origin="ngModel" required>
-        <option value=""></option>
+        <option selected disabled hidden>Select Country</option>
         <option *ngFor="let country of countries" [value]="country">{{ country | uppercase }}</option>
       </select>
-      <div [hidden]="origin.valid || origin.pristine" class="alert alert-danger"><p>Country of Origin is required</p></div> 
+      <div [hidden]="origin.valid" id="country-alert" class="alert alert-danger"><p>Country of Origin is required</p></div> 
 
-      <input  type="submit" name="submit" value="Submit" id="submit" [disabled]="!origin.valid || !serial.valid" id="serial-number-check-button">
+      <input  type="submit" name="submit" value="Submit" [disabled]="!origin.valid || !serial.valid" id="serial-number-check-button">
 
     </fieldset>
   </form>
