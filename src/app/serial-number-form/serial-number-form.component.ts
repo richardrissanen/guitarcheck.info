@@ -33,7 +33,7 @@ export class SerialNumberFormComponent implements OnInit {
     
     for (var i = maxSize; i >= minSize; i--) {
 
-      const serialNumberPrefix = this.serialNumber.substring(0, i)
+      const serialNumberPrefix = this.serialNumber.substring(0, i).toLowerCase();
       year = origin[serialNumberPrefix]
 
       if (typeof year !== 'undefined') { break }
