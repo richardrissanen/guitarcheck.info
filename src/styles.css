@@ -1,0 +1,107 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* DEAFULT STYLES */
+a, a:visited, a:active, a:disabled {
+	color: #eee;
+	text-decoration: none;
+}
+
+article {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+body {
+	color: #aaa;
+	font-family: Georgia, serif;
+}
+
+dd, dt, p { line-height: 1.375em; }
+
+dd {
+	margin-left: 22px;
+	margin-bottom: 11px;
+}
+
+dl { margin-top: 11px; }
+
+dt { font-weight: bold; }
+
+dd a { text-decoration: underline; }
+
+footer, header {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 450px;
+}
+
+html { background-color: #222; }
+
+h1 { font-size: 2.25em; }
+h2 { font-size: 1.625em; }
+h3 { font-size: 1.375em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.875em; }
+
+h1, h2, h3, h4, h5 { font-family: helvetica, arial, courier, sans-serif; }
+
+h2, h3, h4, h5, legend span {
+	color: #ffd700;
+	font-family: "Times New Roman", Times, serif;
+	text-shadow: 1px 1px 1px #bbb;
+}
+
+li {
+	display: inline;
+	padding: 11px;
+}
+
+p {
+  margin-bottom: 11px;
+  margin-top: 11px;
+}
+
+small { font-size: 0.8em; }
+
+ul { margin-left: -11px; }
+
+@media only screen and (max-width: 450px) {
+	article { width: 96%; }
+}
