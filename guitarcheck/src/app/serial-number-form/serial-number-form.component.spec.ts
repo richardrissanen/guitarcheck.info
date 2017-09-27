@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SerialNumberFormComponent } from './serial-number-form.component';
+import { FormsModule } from '@angular/forms';
+
 
 describe('SerialNumberFormComponent', () => {
   let component: SerialNumberFormComponent;
@@ -8,7 +10,8 @@ describe('SerialNumberFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SerialNumberFormComponent ]
+      declarations: [ SerialNumberFormComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
