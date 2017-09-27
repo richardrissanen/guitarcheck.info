@@ -20,10 +20,25 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  // it('should render title in a anchor tag', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('').textContent).toContain('guitarcheck.info');
-  // }));
+  it('should have app-header', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const appHeader = compiled.querySelector('app-header');
+    expect(appHeader).toEqual(jasmine.anything());
+  }));
+  it('should have router-outlet', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const routerOutlet = compiled.querySelector('router-outlet');
+    expect(routerOutlet).toEqual(jasmine.anything());
+  }));
+  it('should have app-footer', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    const appFooter = compiled.querySelector('app-footer')
+    expect(appFooter).toEqual(jasmine.anything());
+  }));
 });
