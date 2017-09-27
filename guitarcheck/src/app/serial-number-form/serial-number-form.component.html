@@ -15,7 +15,7 @@
       </select>
       <div [hidden]="origin.valid || origin.pristine" class="alert alert-danger"><p>Country of Origin is required</p></div> 
 
-      <input  type="submit" name="submit" value="Submit" [disabled]="!origin.valid || !serial.valid" id="serial-number-check-button">
+      <input  type="submit" name="submit" value="Submit" id="submit" [disabled]="!origin.valid || !serial.valid" id="serial-number-check-button">
 
     </fieldset>
   </form>

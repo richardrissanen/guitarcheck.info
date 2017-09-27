@@ -38,8 +38,15 @@ export class SerialNumberFormComponent implements OnInit {
 
       if (typeof year !== 'undefined') { break }
     }
+    
+    let message;
 
-    const message = 'Your ' + this.company + ' guitar is from ' + year
+    if (typeof year === 'undefined') {
+      message = 'The serial number you entered does not appear to be a Squier serial number.'
+    } else {
+      message = 'Your ' + this.company + ' guitar is from ' + year
+    }
+    
     alert(message)
     
   }

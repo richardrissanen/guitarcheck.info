@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header.component';
 
@@ -23,10 +24,9 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should render title in a anchor tag', async(() => {
-  //   const fixture = TestBed.createComponent(HeaderComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('').textContent).toContain('guitarcheck.info');
-  // }));
+  it('should render title in #app-title', async(() => {
+    const appTitle = fixture.debugElement.query(By.css('#app-title'));
+    const appTitleElement = appTitle.nativeElement;
+    expect(appTitleElement.textContent).toEqual('guitarcheck.info') 
+  }));
 });
