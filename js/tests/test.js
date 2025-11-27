@@ -23,7 +23,7 @@ requirejs(['simpleTest', '../lib/serialNumberChecker', '../config/strings'], fun
       simpleTest.assert(message.message === null)
     },
     testValidLengthMaximumFailure: function() {
-      var message = serialNumberChecker.validLength('1234567891013')
+      var message = serialNumberChecker.validLength('12345678910111213')
 
       simpleTest.assert(message.status  === 'ok')
       simpleTest.assert(message.state   === false)
